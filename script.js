@@ -29,11 +29,12 @@ async function getPokemByID(id) {
 getAllPokemons();
 
 async function getAllPokemons() {
+  document.body.appendChild(pokemons_container);
   for (let index = 1; index <= Total_Pokemons; index++) {
     const pokemon = await getPokemByID(index);
     createPokemonCard(pokemon);
   }
-  document.body.appendChild(pokemons_container);
+
 }
 
 function createPokemonCard(pokemon_res) {
